@@ -1,0 +1,41 @@
+@import '../../colours.scss';
+
+.social-list {
+  display: flex;
+
+}
+
+.social-item {
+   color: $white;
+   display: flex;
+   align-items: center;
+   margin: 0 1em;
+   transition: all 0.2s ease;
+  a {
+    text-decoration: none;
+    color: $white;
+    font-size: 2rem;
+    transition: all 0.2s ease;
+
+  }
+
+  &:hover {
+    color: $primary;
+
+    a {
+      color: $primary;
+    }
+  }
+}
+
+#snapchat {
+  i {
+    margin-right: 0.5em;
+    font-size: 2rem;
+  }
+
+  p {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

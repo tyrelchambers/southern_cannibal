@@ -1,24 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Header from './layouts/Header/Header';
+import Socials from './layouts/Socials/Socials';
+import About from './sections/About/About';
+import SupportChannel from './sections/SupportChannel/SupportChannel';
+import banner from './assets/canni-banner.jpg';
+import RecentVideos from './sections/RecentVideos/RecentVideos';
+import MerchStore from './sections/MerchStore/MerchStore';
+import Footer from './layouts/Footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="hero">
+        <Header />
+        <h1 className="styled-title">STAY HUNGRY</h1>
+        <Socials />
+      </div>
+      <About />
+      <SupportChannel />
+      <div className="banner">
+        <img src={banner} alt="Southern Cannibal banner"/>
+      </div>
+      
+      <RecentVideos />
+      <MerchStore />
+      <Footer />
     </div>
   );
 }

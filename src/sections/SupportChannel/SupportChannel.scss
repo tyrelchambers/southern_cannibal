@@ -1,0 +1,48 @@
+.support-section {
+  display: flex;
+  justify-content: center;
+  padding: 3em;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.support-list {
+  display: flex;
+  align-items: center;
+}
+
+.support-item {
+  margin: 2em;
+  background-color: white;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px rgba(black, 0.4);
+}
+
+#patreon {
+  a {
+    display: block;
+    width: 100px;
+    height: 100px;
+
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.discord-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 250px;
+    height: 75px;
+  }
+}

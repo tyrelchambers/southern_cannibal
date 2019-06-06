@@ -1,0 +1,87 @@
+@import './colours.scss';
+
+body {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $bg-dark;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+body, 
+html {
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 5px;
+  font-family: "Horroroid";
+}
+
+.styled-title {
+  font-size: 3rem;
+  font-family: "Horroroid3D";
+}
+
+.styled-title.section {
+  color: $primary;
+}
+
+@font-face {
+  font-family: "Horroroid";
+  src: url('./assets/horroroid/horroroid.ttf');
+}
+
+@font-face {
+  font-family: "Horroroid3D";
+  src: url('./assets/horroroid/horroroidstag.ttf');
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.btn {
+  border-radius: 50px;
+  border: none;
+  padding: 1.4em;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0px 2px 15px rgba($primary, 0.8);
+}
+
+.btn-primary {
+  background-color: $primary;
+  color: $white;
+}
+
+.container {
+  margin: 2em 0;
+}
+
+.sub-text {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  line-height: 1.8em;
+  color: $white;
+}
+
+.bg-light {
+  background-color: $bg-light;
+}
