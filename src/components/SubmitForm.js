@@ -48,7 +48,7 @@ export default function SubmitForm() {
 
 
 const submitHandler = async (payload) => {
-  await Axios.post("http://localhost:3001/submit", {
+  await Axios.post("https://southern-cannibal-backend.herokuapp.com/submit", {
     ...payload
   })
   .then(res => alert(res.data.message))
