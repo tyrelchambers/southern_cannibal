@@ -8,6 +8,7 @@ import banner from './assets/canni-banner.jpg';
 import RecentVideos from './sections/RecentVideos/RecentVideos';
 import MerchStore from './sections/MerchStore/MerchStore';
 import Footer from './layouts/Footer/Footer';
+import Stats from './layouts/Stats/Stats';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
         <Socials />
       </div>
       <About />
+      <Stats />
+
       <SupportChannel />
       <div className="banner">
         <img src={banner} alt="Southern Cannibal banner"/>
