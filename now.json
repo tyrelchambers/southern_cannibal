@@ -13,7 +13,7 @@
   "build": {
     "env": {
       "REACT_APP_YOUTUBE_API": "@youtube-key",
-      "REACT_APP_CHANNEL_ID": "@channel-id-southerncannibal"
+      "REACT_APP_CHANNEL_ID": "@channel-id-southerncannibal" 
     }
   }
 }
