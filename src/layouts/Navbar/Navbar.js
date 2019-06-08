@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Navbar.scss';
 import { Link, animateScroll as scroll } from "react-scroll";
 
+import { Link as NavL } from 'react-router-dom';
 
 export default function Navbar() {
   const [ extended, setExtended ] = useState(false);
@@ -79,10 +80,10 @@ export default function Navbar() {
         </li>
 
         <li className="navbar-item">
-          <a
-            href="/submit_story">
+          <NavL
+            to="/submit_story">
             <button className="btn btn-primary">Submit a story</button>
-          </a>
+          </NavL>
         </li>
       </ul>
     </nav>
