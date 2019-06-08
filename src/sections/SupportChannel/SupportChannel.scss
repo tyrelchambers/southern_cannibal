@@ -12,6 +12,8 @@
 .support-list {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .support-item {
@@ -44,5 +46,11 @@
   img {
     width: 250px;
     height: 75px;
+  }
+}
+
+@media screen and (max-width: 768px ) {
+  .support-section {
+    padding: 1em;
   }
 }

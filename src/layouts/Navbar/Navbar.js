@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.scss';
 import { Link, animateScroll as scroll } from "react-scroll";
 
 
 export default function Navbar() {
+  const [ extended, setExtended ] = useState(false);
   return (
     <nav className="navbar">
-      <ul className="navbar-list">
+      <div className="mobile-toggle"
+        onClick={() => setExtended(!extended)}
+      >
+        <span className="line"></span>
+        <span className="line"></span>
+        <span className="line"></span>
+      </div>
+      <ul className={`navbar-list navbar-list-mobile ${extended ? "extended" : ""}`}>
         <li className="navbar-item">
           <Link
+            onClick={() => setExtended(false)}
             spy={true}
             activeClass="active" 
             to="home"
@@ -20,6 +29,7 @@ export default function Navbar() {
 
         <li className="navbar-item">
           <Link
+            onClick={() => setExtended(false)}
             spy={true}
             activeClass="active" 
             to="about"
@@ -32,6 +42,7 @@ export default function Navbar() {
 
         <li className="navbar-item">
           <Link
+            onClick={() => setExtended(false)}
             spy={true}
             activeClass="active" 
             to="paypal"
@@ -44,6 +55,7 @@ export default function Navbar() {
 
         <li className="navbar-item">
           <Link
+            onClick={() => setExtended(false)}
             spy={true}
             activeClass="active" 
             to="videos"
@@ -56,6 +68,7 @@ export default function Navbar() {
 
         <li className="navbar-item">
           <Link
+            onClick={() => setExtended(false)}
             spy={true}
             activeClass="active" 
             to="merch"
@@ -66,10 +79,10 @@ export default function Navbar() {
         </li>
 
         <li className="navbar-item">
-          <Link
-            spy={true} to="/submit_story">
+          <a
+            href="/submit_story">
             <button className="btn btn-primary">Submit a story</button>
-          </Link>
+          </a>
         </li>
       </ul>
     </nav>

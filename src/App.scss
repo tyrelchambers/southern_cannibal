@@ -28,3 +28,10 @@
     object-fit: contain;
   }
 }
+
+@media screen and (max-width: 892px) {
+  .hero .styled-title {
+    font-size: 13vw;
+    text-align: center;
+  }
+}
