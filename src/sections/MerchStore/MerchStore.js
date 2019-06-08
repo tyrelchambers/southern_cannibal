@@ -3,7 +3,7 @@ import './MerchStore.scss';
 
 export default function MerchStore() {
   return (
-    <div className="merch-store-section bg-light">
+    <div className="merch-store-section bg-light" id="merch">
       <div className="container">
         <h1 className="styled-title section">Check out my merch!</h1>
         

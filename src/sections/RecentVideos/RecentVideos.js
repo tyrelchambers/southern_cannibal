@@ -25,7 +25,7 @@ export default function RecentVideos() {
   }, []);
 
   return (
-    <div className="support-section">
+    <div className="support-section" id="videos">
       <div className="container">
          <h1 className="styled-title section">Recent videos</h1>
          <div className="video-list" id="latestVideo">

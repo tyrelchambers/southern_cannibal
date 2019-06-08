@@ -11,8 +11,8 @@ import Footer from './layouts/Footer/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <div className="hero">
+    <div className="App" >
+      <div className="hero" id="home">
         <Header />
         <h1 className="styled-title">STAY HUNGRY</h1>
         <Socials />
