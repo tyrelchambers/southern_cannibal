@@ -15,7 +15,7 @@ export default function SubmitForm() {
   const [ loading, setLoading ] = useState(false);
 
   return (
-    <form className="form" netlify>
+    <form className="form" netlify name="story-submission" method="POST">
       <ul>
         {errors.map((x, id) => (
           <li key={id} className="error-item">
