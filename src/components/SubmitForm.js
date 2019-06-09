@@ -41,13 +41,14 @@ export default function SubmitForm() {
           </div>
       </div>
 
-      <button className="btn btn-primary" onClick={e => submitHandler(payload)}>Submit Story</button>
+      <button className="btn btn-primary" onClick={e => submitHandler(e, payload)}>Submit Story</button>
     </form>
   )
 }
 
 
-const submitHandler = async (payload) => {
+const submitHandler = async (e, payload) => {
+  e.preventDefault();
   await Axios.post("https://southern-cannibal-backend.herokuapp.com/submit", {
     ...payload
   })
