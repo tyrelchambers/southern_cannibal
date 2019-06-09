@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './forms.scss';
 import Axios from 'axios';
+import Loader from './Loader/Loader';
 
 export default function SubmitForm() {
   const [ payload, setPayload ] = useState({
@@ -11,6 +12,7 @@ export default function SubmitForm() {
   });
 
   const [ errors, setErrors ] = useState([]);
+  const [ loading, setLoading ] = useState(false);
 
   return (
     <form className="form">
@@ -50,19 +52,28 @@ export default function SubmitForm() {
           </div>
       </div>
 
-      <button className="btn btn-primary" onClick={e => submitHandler(e, payload, errors, setErrors)}>Submit Story</button>
+      {loading &&
+        <Loader />
+      }
+
+      {!loading &&
+        <button className="btn btn-primary" onClick={e => {
+          setLoading(true);
+          submitHandler(e, payload, setErrors, setLoading)
+        }}>Submit Story</button>
+      }
     </form>
   )
 }
 
 
-const submitHandler = async (e, payload, errors, setErrors) => {
+const submitHandler = async (e, payload, setErrors, setLoading) => {
   e.preventDefault();
   const _ = [];
 
   if ( !payload.name ) _.push("Name must be provided");
   if ( !payload.story ) _.push("A story must be present");
-  if ( payload.shared .length === 0) _.push("Have you shared this story? (Missing shared toggle)");
+  if ( payload.shared.length === 0) _.push("Have you shared this story? (Missing shared toggle)");
   
   if ( _.length > 0 ) return setErrors([..._]);
   
@@ -70,6 +81,9 @@ const submitHandler = async (e, payload, errors, setErrors) => {
   await Axios.post("https://southern-cannibal-backend.herokuapp.com/submit", {
     ...payload
   })
-  .then(res => alert(res.data.message))
+  .then(res => {
+    setLoading(false);
+    alert(res.data.message);
+  })
   .catch(console.log);
 }
