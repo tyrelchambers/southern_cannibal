@@ -63,7 +63,7 @@ const submitHandler = async (e, payload, errors, setErrors) => {
 
   if ( !payload.name ) _.push("Name must be provided");
   if ( !payload.story ) _.push("A story must be present");
-  if ( !payload.shared ) _.push("Have you shared this story? (Missing shared toggle)");
+  if ( payload.shared !== true || payload.shared !== false) _.push("Have you shared this story? (Missing shared toggle)");
   
   if ( _.length > 0 ) return setErrors([..._]);
   
