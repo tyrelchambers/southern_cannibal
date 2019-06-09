@@ -59,7 +59,7 @@ export default function SubmitForm() {
       {!loading &&
         <button className="btn btn-primary" onClick={e => {
           setLoading(true);
-          submitHandler(e, payload, setErrors, setLoading)
+          submitHandler(e, payload, setErrors, setLoading);
         }}>Submit Story</button>
       }
     </form>
@@ -83,7 +83,7 @@ const submitHandler = async (e, payload, setErrors, setLoading) => {
   })
   .then(res => {
     setLoading(false);
-    alert(res.data.message);
+    window.location.pathname = "/thank_you"
   })
   .catch(console.log);
 }
