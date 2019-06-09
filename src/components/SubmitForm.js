@@ -21,7 +21,6 @@ export default function SubmitForm() {
           </li>
         ))}
       </ul>
-      {console.log(errors)}
       <div className="field-group">
         <label htmlFor="name" className="form-label">Name or Alias</label>
         <input type="text" className='input' name="name" onChange={e => setPayload({...payload, [e.target.name]: e.target.value})} required/>
