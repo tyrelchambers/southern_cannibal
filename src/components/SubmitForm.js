@@ -10,8 +10,17 @@ export default function SubmitForm() {
     shared: ""
   });
 
+  const [ errors, setErrors ] = useState([]);
+
   return (
     <form className="form">
+      <ul>
+        {errors.map((x, id) => (
+          <li key={id} className="error-item">
+            {x}
+          </li>
+        ))}
+      </ul>
       <div className="field-group">
         <label htmlFor="name" className="form-label">Name or Alias</label>
         <input type="text" className='input' name="name" onChange={e => setPayload({...payload, [e.target.name]: e.target.value})} required/>
@@ -41,14 +50,22 @@ export default function SubmitForm() {
           </div>
       </div>
 
-      <button className="btn btn-primary" onClick={e => submitHandler(e, payload)}>Submit Story</button>
+      <button className="btn btn-primary" onClick={e => submitHandler(e, payload, errors, setErrors)}>Submit Story</button>
     </form>
   )
 }
 
 
-const submitHandler = async (e, payload) => {
+const submitHandler = async (e, payload, errors, setErrors) => {
   e.preventDefault();
+  const _ = [];
+
+  if ( !payload.name ) errors.push("Name must be provided");
+  if ( !payload.story ) errors.push("A story must be present");
+  if ( !payload.shared ) errors.push("Have you shared this story? (Missing shared toggle)");
+  
+  if ( errors.length > 0 ) return setErrors([...errors, ..._]);
+  
   await Axios.post("https://southern-cannibal-backend.herokuapp.com/submit", {
     ...payload
   })
