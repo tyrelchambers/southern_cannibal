@@ -62,14 +62,14 @@ const submitHandler = async (e, payload, errors, setErrors) => {
 
   if ( !payload.name ) _.push("Name must be provided");
   if ( !payload.story ) _.push("A story must be present");
-  if ( payload.shared !== true || payload.shared !== false) _.push("Have you shared this story? (Missing shared toggle)");
+  if ( payload.shared .length === 0) _.push("Have you shared this story? (Missing shared toggle)");
   
   if ( _.length > 0 ) return setErrors([..._]);
   
   setErrors([_]);
-  await Axios.post("https://southern-cannibal-backend.herokuapp.com/submit", {
-    ...payload
-  })
-  .then(res => alert(res.data.message))
-  .catch(console.log);
+  // await Axios.post("https://southern-cannibal-backend.herokuapp.com/submit", {
+  //   ...payload
+  // })
+  // .then(res => alert(res.data.message))
+  // .catch(console.log);
 }
