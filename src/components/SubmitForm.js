@@ -67,9 +67,9 @@ const submitHandler = async (e, payload, errors, setErrors) => {
   if ( _.length > 0 ) return setErrors([..._]);
   
   setErrors([_]);
-  // await Axios.post("https://southern-cannibal-backend.herokuapp.com/submit", {
-  //   ...payload
-  // })
-  // .then(res => alert(res.data.message))
-  // .catch(console.log);
+  await Axios.post("https://southern-cannibal-backend.herokuapp.com/submit", {
+    ...payload
+  })
+  .then(res => alert(res.data.message))
+  .catch(console.log);
 }
