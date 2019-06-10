@@ -6,8 +6,7 @@ export default function About() {
     <div className="about-section" id="about">
       <div className="container">
         <h1 className="styled-title section">Who's southern cannibal</h1>
-        <p className="sub-text">I'm Southern Cannibal, I cover a wide range of horror themed topics from scary stories, to dark history, to unsolved mysteries. Anything and everything horror related!
-        I hope you like what you see here and if you're hungry for more</p>
+        <p className="sub-text">I'm Southern Cannibal, I'm a horror themed YouTuber. I cover many different topics! If you have a story be sure to submit it by clicking the "Submit A Story" Button! Stay Hungry everyone :)</p>
       </div>
     </div>
   )

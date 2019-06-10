@@ -8,19 +8,17 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  justify-content: space-between;
 
   .styled-title {
     color: $primary;
     font-size: 9em ;
     text-align: center;
     letter-spacing: 7px;
-    margin-top: 2em;
   }
 
   .avatar {
-    transform: translateY(110px);
-
+    position: absolute;
+    bottom: -110px;
     width: 900px;
   }
 }
@@ -28,8 +26,7 @@
 .back-link {
   color: white;
 }
-
-@media screen and (max-width: 618px){
+@media screen and (max-width: 1262px) {
   .thanks-wrapper {
     .styled-title {
       font-size: 10vw;
