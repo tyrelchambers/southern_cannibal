@@ -16,7 +16,7 @@ export default function SubmitForm() {
   const [ loading, setLoading ] = useState(false);
 
   return (
-    <form className="form">
+    <form className="form" netlify name="story-submission" method="POST">
       <ul>
         {errors.map((x, id) => (
           <li key={id} className="error-item">
@@ -86,7 +86,7 @@ const submitHandler = async (e, payload, setErrors, setLoading) => {
   if ( _.length > 0 ) return setErrors([..._]);
   
   setErrors([_]);
-  await Axios.post("http://localhost:3001/submit", {
+  await Axios.post("https://southern-cannibal-backend.herokuapp.com/submit", {
     ...payload
   })
   .then(res => {
