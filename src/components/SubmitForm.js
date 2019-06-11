@@ -7,6 +7,7 @@ export default function SubmitForm() {
   const [ payload, setPayload ] = useState({
     email: "",
     name: "",
+    subject: "",
     story: "",
     shared: ""
   });
@@ -24,7 +25,7 @@ export default function SubmitForm() {
         ))}
       </ul>
       <div className="field-group">
-        <label htmlFor="name" className="form-label">Name or Alias</label>
+        <label htmlFor="name" className="form-label"><span style={{color: "red"}}>*</span> Name or Alias</label>
         <input type="text" className='input' name="name" onChange={e => setPayload({...payload, [e.target.name]: e.target.value})} required/>
       </div>
 
@@ -34,12 +35,18 @@ export default function SubmitForm() {
       </div>
 
       <div className="field-group">
-        <label htmlFor="story" className="form-label">The Story</label>
+        <label htmlFor="subject" className="form-label"><span style={{color: "red"}}>*</span> Subject (Examples: True Scary Stalker Story, Scary Ghost Story, Camping Story, etc.)</label>
+        <input type="text"  className='input' name="subject" onChange={e => setPayload({...payload, [e.target.name]: e.target.value})}/>
+      </div>
+
+
+      <div className="field-group">
+        <label htmlFor="story" className="form-label"><span style={{color: "red"}}>*</span> The Story</label>
         <textarea type="text" className="textarea" name="story" onChange={e => setPayload({...payload, [e.target.name]: e.target.value})} required/>
       </div>
 
       <div className="field-group">
-        <label htmlFor="sharedStory" className="form-label">Have you shared this story with another narrator?</label>
+        <label htmlFor="sharedStory" className="form-label"><span style={{color: "red"}}>*</span> Have you shared this story with another narrator?</label>
 
           <div className="radios">
             <input type="radio" name="sharedStory" value="yes" onChange={() => setPayload({...payload, shared: true})}/>
@@ -73,6 +80,7 @@ const submitHandler = async (e, payload, setErrors, setLoading) => {
 
   if ( !payload.name ) _.push("Name must be provided");
   if ( !payload.story ) _.push("A story must be present");
+  if ( !payload.subject ) _.push("Please include a subject");
   if ( payload.shared.length === 0) _.push("Have you shared this story? (Missing shared toggle)");
   
   if ( _.length > 0 ) return setErrors([..._]);
