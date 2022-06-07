@@ -1,26 +1,29 @@
-import React, { useState } from 'react'
-import './Navbar.scss';
-import { Link, animateScroll as scroll } from "react-scroll";
+import "./Navbar.scss";
 
-import { Link as NavL } from 'react-router-dom';
+import { Link, animateScroll as scroll } from "react-scroll";
+import React, { useState } from "react";
+
+import { Link as NavL } from "react-router-dom";
 
 export default function Navbar() {
-  const [ extended, setExtended ] = useState(false);
+  const [extended, setExtended] = useState(false);
   return (
     <nav className="navbar">
-      <div className="mobile-toggle"
-        onClick={() => setExtended(!extended)}
-      >
+      <div className="mobile-toggle" onClick={() => setExtended(!extended)}>
         <span className="line"></span>
         <span className="line"></span>
         <span className="line"></span>
       </div>
-      <ul className={`navbar-list navbar-list-mobile ${extended ? "extended" : ""}`}>
+      <ul
+        className={`navbar-list navbar-list-mobile ${
+          extended ? "extended" : ""
+        }`}
+      >
         <li className="navbar-item">
           <Link
             onClick={() => setExtended(false)}
             spy={true}
-            activeClass="active" 
+            activeClass="active"
             to="home"
             smooth={true}
           >
@@ -32,7 +35,7 @@ export default function Navbar() {
           <Link
             onClick={() => setExtended(false)}
             spy={true}
-            activeClass="active" 
+            activeClass="active"
             to="about"
             smooth={true}
             offset={-120}
@@ -45,7 +48,7 @@ export default function Navbar() {
           <Link
             onClick={() => setExtended(false)}
             spy={true}
-            activeClass="active" 
+            activeClass="active"
             to="paypal"
             smooth={true}
             offset={-120}
@@ -58,7 +61,7 @@ export default function Navbar() {
           <Link
             onClick={() => setExtended(false)}
             spy={true}
-            activeClass="active" 
+            activeClass="active"
             to="videos"
             smooth={true}
             offset={-70}
@@ -71,7 +74,7 @@ export default function Navbar() {
           <Link
             onClick={() => setExtended(false)}
             spy={true}
-            activeClass="active" 
+            activeClass="active"
             to="merch"
             smooth={true}
           >
@@ -80,12 +83,11 @@ export default function Navbar() {
         </li>
 
         <li className="navbar-item">
-          <NavL
-            to="/submit_story">
+          <NavL to="/submit_story">
             <button className="btn btn-primary">Submit a story</button>
           </NavL>
         </li>
       </ul>
     </nav>
-  )
+  );
 }

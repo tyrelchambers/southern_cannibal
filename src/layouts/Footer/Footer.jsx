@@ -1,7 +1,8 @@
-import React from 'react'
-import './Footer.scss';
-import Socials from '../Socials/Socials';
-import { Link } from 'react-router-dom';
+import "./Footer.scss";
+
+import { Link } from "react-router-dom";
+import React from "react";
+import Socials from "../Socials/Socials";
 
 export default function Footer() {
   return (
@@ -13,5 +14,5 @@ export default function Footer() {
       <h1 className="styled-title phrase">remember to... stay hungry</h1>
       <Socials />
     </footer>
-  )
+  );
 }
