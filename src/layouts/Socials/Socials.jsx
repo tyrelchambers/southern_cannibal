@@ -1,5 +1,6 @@
-import React from 'react'
-import './Socials.scss';
+import "./Socials.scss";
+
+import React from "react";
 
 export default function Socials() {
   return (
@@ -9,10 +10,6 @@ export default function Socials() {
           <i className="fab fa-youtube"></i>
         </a>
       </li>
-      <li className="social-item" id="snapchat">
-        <i className="fab fa-snapchat-ghost"></i>
-        <p>southerncanny</p>
-      </li>
 
       <li className="social-item">
         <a href="https://instagram.com/Southern_Canni/">
@@ -21,34 +18,16 @@ export default function Socials() {
       </li>
 
       <li className="social-item">
-        <a href="https://teespring.com/stores/southern-cannibal-merch">
-          <i className="fas fa-shopping-cart"></i>
+        <a href="https://twitter.com/Southern_Canni">
+          <i className="fab fa-twitter"></i>
         </a>
       </li>
 
       <li className="social-item">
-        <a href="https://www.reddit.com/r/SouthernCannibal/">
-          <i className="fab fa-reddit"></i>
-        </a>
-      </li>
-
-      <li className="social-item">
-        <a href="http://patreon.com/SouthernCannibal">
-          <i className="fab fa-patreon"></i>  
-        </a>
-      </li>
-
-      <li className="social-item">
-        <a href="https://www.paypal.me/southerncannibal">
-          <i className="fab fa-paypal"></i>
-        </a>
-      </li>
-
-      <li className="social-item">
-        <a href="https://discord.gg/k9pg3mg">
-          <i className="fab fa-discord"></i>
+        <a href="https://open.spotify.com/show/3zfschBzphkHhhpV870gFW?si=a5420efd7f1049f1">
+          <i className="fab fa-spotify"></i>
         </a>
       </li>
     </ul>
-  )
+  );
 }
